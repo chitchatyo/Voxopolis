@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dltx73gm6qa18"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_vvnat"]
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_iys4v"]
+material = SubResource("ORMMaterial3D_vvnat")
+size = Vector2(0.25, 0.25)
+
+[sub_resource type="Curve" id="Curve_qdxi2"]
+_data = [Vector2(0, 0), 0.0, 21.9752, 0, 0, Vector2(0.186709, 1), 0.0, 0.0, 0, 0, Vector2(0.781646, 1), 0.0, 0.0, 0, 0, Vector2(0.984177, 0.018868), -20.2717, 0.0, 0, 0]
+point_count = 4
+
+[node name="Test" type="Node2D"]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+one_shot = true
+mesh = SubResource("QuadMesh_iys4v")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_qdxi2")

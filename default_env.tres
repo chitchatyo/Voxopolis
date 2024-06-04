@@ -1,0 +1,8 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://cb17mepe7jefu"]
+
+[sub_resource type="Sky" id="1"]
+
+[resource]
+background_mode = 2
+sky = SubResource("1")
+volumetric_fog_density = 0.7282

@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://xclj7mkx3pnh"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_qgnbk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qgnbk")
+
+[node name="Panel" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.007
+anchor_top = -0.025
+offset_left = 458.064
+offset_top = 266.2
+offset_right = 746.0
+offset_bottom = 346.0
+
+[node name="Backround" type="Panel" parent="Panel"]
+layout_mode = 2
+
+[node name="TextContainer" type="MarginContainer" parent="Panel/Backround"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="Panel/Backround/TextContainer"]
+layout_mode = 2
+placeholder_text = "Token enters here"
+
+[node name="ButtonContainer" type="MarginContainer" parent="Panel/Backround"]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 57.0
+offset_right = 280.0
+offset_bottom = 88.0
+
+[node name="Button" type="Button" parent="Panel/Backround/ButtonContainer"]
+layout_mode = 2
+text = "SUBMIT"
+
+[connection signal="pressed" from="Panel/Backround/ButtonContainer/Button" to="." method="_on_button_pressed"]
